@@ -297,10 +297,6 @@ msgstr ""
 msgid "{date} at {time}"
 msgstr "{date} at {time}"
 
-#: src/components/dms/MessagesListHeader.tsx:195
-msgid "{displayName}’s group chat"
-msgstr "{displayName}’s group chat"
-
 #: src/lib/generate-starterpack.ts:104
 #: src/screens/StarterPack/Wizard/index.tsx:200
 msgid "{displayName}'s Starter Pack"
@@ -1699,7 +1695,7 @@ msgstr ""
 #: src/components/dms/dialogs/NewChatDialog.tsx:94
 #: src/components/dms/MessageProfileButton.tsx:60
 #: src/screens/Messages/ChatList.tsx:376
-#: src/screens/Messages/Conversation.tsx:266
+#: src/screens/Messages/Conversation.tsx:234
 #: src/screens/Messages/ConversationSettings.tsx:552
 msgid "Before you can message another user, you must first verify your email."
 msgstr ""
@@ -2727,7 +2723,7 @@ msgstr "Continue to group name"
 msgid "Continue to next step"
 msgstr ""
 
-#: src/screens/Messages/Conversation.tsx:66
+#: src/screens/Messages/Conversation.tsx:63
 msgid "Conversation"
 msgstr ""
 
@@ -3223,8 +3219,7 @@ msgstr ""
 msgid "Deleted"
 msgstr ""
 
-#: src/components/dms/MessagesListHeader.tsx:128
-#: src/components/dms/MessagesListHeader.tsx:189
+#: src/components/dms/MessagesListHeader.tsx:105
 #: src/screens/Messages/components/ChatListItem.tsx:127
 #: src/screens/Messages/ConversationSettings.tsx:383
 #: src/screens/Messages/ConversationSettings.tsx:599
@@ -5005,10 +5000,6 @@ msgstr ""
 #: src/components/moderation/ReportDialog/utils/useReportOptions.ts:169
 msgid "Grooming or predatory behavior"
 msgstr ""
-
-#: src/components/dms/MessagesListHeader.tsx:195
-msgid "Group chat"
-msgstr "Group chat"
 
 #: src/screens/Messages/ConversationSettings.tsx:740
 msgctxt "toast"
@@ -7307,7 +7298,7 @@ msgstr ""
 msgid "Open Germ DM"
 msgstr ""
 
-#: src/components/dms/MessagesListHeader.tsx:216
+#: src/components/dms/MessagesListHeader.tsx:177
 msgid "Open group chat settings"
 msgstr "Open group chat settings"
 
@@ -9935,7 +9926,7 @@ msgstr ""
 msgid "Something wasn't quite right with the data you're trying to report. Please contact support."
 msgstr ""
 
-#: src/screens/Messages/Conversation.tsx:164
+#: src/screens/Messages/Conversation.tsx:143
 #: src/screens/Messages/ConversationSettings.tsx:198
 msgid "Something went wrong"
 msgstr ""
@@ -11794,7 +11785,7 @@ msgstr ""
 msgid "View {0}’s profile"
 msgstr "View {0}’s profile"
 
-#: src/components/dms/MessagesListHeader.tsx:141
+#: src/components/dms/MessagesListHeader.tsx:118
 #: src/screens/Messages/ConversationSettings.tsx:645
 msgid "View {displayName}’s profile"
 msgstr "View {displayName}’s profile"
@@ -11971,7 +11962,7 @@ msgstr ""
 msgid "We couldn't find any results for that topic."
 msgstr ""
 
-#: src/screens/Messages/Conversation.tsx:165
+#: src/screens/Messages/Conversation.tsx:144
 msgid "We couldn't load this conversation"
 msgstr ""
 
