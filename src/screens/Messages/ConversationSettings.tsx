@@ -655,7 +655,7 @@ function MemberMenu({
               label={l`Message ${displayName}`}
               onPress={handleMessageMember}>
               <Menu.ItemText>
-                <Trans>Message</Trans>
+                <Trans context="action">Message</Trans>
               </Menu.ItemText>
               <Menu.ItemIcon icon={MessageIcon} />
             </Menu.Item>
@@ -1084,7 +1084,7 @@ function InviteLinkPrompt({
     <Prompt.Basic
       control={control}
       title={l`Invite link`}
-      description={l`An invite link lets people join this group chat without being added directly. You control who can use the link and whether they need your approval. You can disable the link at any time. Your name, avatar, and the name of the group chat will be visible to everyone`}
+      description={l`An invite link lets people join this group chat without being added directly. You control who can use the link and whether they need your approval. You can disable the link at any time. Your name, avatar, and the name of the group chat will be visible to everyone.`}
       confirmButtonCta={l`Get started`}
       cancelButtonCta={l`Cancel`}
       onConfirm={onConfirm}
