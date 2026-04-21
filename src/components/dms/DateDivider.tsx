@@ -61,7 +61,6 @@ let DateDivider = ({date: dateStr}: {date: string}): React.ReactNode => {
         style={[
           a.text_xs,
           a.text_center,
-          t.atoms.bg,
           t.atoms.text_contrast_medium,
           a.px_md,
         ]}>

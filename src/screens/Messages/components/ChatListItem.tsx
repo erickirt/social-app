@@ -37,6 +37,7 @@ import {AvatarBubbles} from '#/components/AvatarBubbles'
 import {useDialogControl} from '#/components/Dialog'
 import {ConvoMenu} from '#/components/dms/ConvoMenu'
 import {LeaveConvoPrompt} from '#/components/dms/LeaveConvoPrompt'
+import {getSystemMessageInfo} from '#/components/dms/systemMessage'
 import {type ConvoWithDetails, parseConvoView} from '#/components/dms/util'
 import {Bell2Off_Filled_Corner0_Rounded as BellStroke} from '#/components/icons/Bell2'
 import {Envelope_Open_Stroke2_Corner0_Rounded as EnvelopeOpen} from '#/components/icons/EnveopeOpen'
@@ -233,7 +234,7 @@ function BaseChatItem({
 }) {
   const ax = useAnalytics()
   const t = useTheme()
-  const {t: l} = useLingui()
+  const {t: l, i18n} = useLingui()
   const {currentAccount} = useSession()
   const menuControl = useMenuControl()
   const leaveConvoControl = useDialogControl()
@@ -265,6 +266,7 @@ function BaseChatItem({
 
       let latestReportableMessage: ChatBskyConvoDefs.MessageView | undefined
 
+      // Message
       if (ChatBskyConvoDefs.isMessageView(convo.lastMessage)) {
         const isFromMe = convo.lastMessage.sender?.did === currentAccount?.did
 
@@ -310,6 +312,8 @@ function BaseChatItem({
 
         lastMessageSentAt = convo.lastMessage.sentAt
       }
+
+      // Deleted message
       if (ChatBskyConvoDefs.isDeletedMessageView(convo.lastMessage)) {
         lastMessageSentAt = convo.lastMessage.sentAt
 
@@ -318,6 +322,7 @@ function BaseChatItem({
           : l`Message deleted`
       }
 
+      // Reaction
       if (ChatBskyConvoDefs.isMessageAndReactionView(convo.lastReaction)) {
         if (
           !lastMessageSentAt ||
@@ -362,6 +367,14 @@ function BaseChatItem({
         }
       }
 
+      // System message
+      if (ChatBskyConvoDefs.isSystemMessageView(convo.lastMessage)) {
+        const info = getSystemMessageInfo(convo.lastMessage.data)
+        if (info) {
+          lastMessage = i18n._(info.message)
+        }
+      }
+
       return {
         lastMessage,
         lastMessageSentAt,
@@ -369,6 +382,7 @@ function BaseChatItem({
       }
     }, [
       l,
+      i18n,
       convo.lastMessage,
       convo.lastReaction,
       currentAccount?.did,
