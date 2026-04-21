@@ -487,6 +487,7 @@ export type Events = {
       | 'SeeMoreSuggestedUsers'
       | 'ProgressGuide'
     location: 'Card' | 'Profile' | 'FollowAll'
+    recSource?: 'Search'
     recId?: number | string
     position: number
     suggestedDid: string
@@ -514,6 +515,7 @@ export type Events = {
       | 'Onboarding'
       | 'SeeMoreSuggestedUsers'
       | 'ProgressGuide'
+    recSource?: 'Search'
     recId?: number | string
     position: number
     suggestedDid: string
