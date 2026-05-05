@@ -6,6 +6,7 @@ import {
   type PanGesture,
 } from 'react-native-gesture-handler'
 import Animated, {
+  type AnimatableValue,
   runOnJS,
   type SharedValue,
   useAnimatedReaction,
@@ -20,7 +21,7 @@ import {
   type Dimensions as ImageDimensions,
   type ImageSource,
   type LightboxTransforms,
-} from '../../@types'
+} from '../../types'
 import {
   applyRounding,
   createTransform,
@@ -29,7 +30,7 @@ import {
   prependTransform,
   readTransform,
   type TransformMatrix,
-} from '../../transforms'
+} from '../transforms'
 
 const MIN_SCREEN_ZOOM = 2
 const MAX_ORIGINAL_IMAGE_ZOOM = 2
@@ -460,7 +461,7 @@ function clampTranslation(
   return clampedValue
 }
 
-function withClampedSpring(value: any) {
+function withClampedSpring<T extends AnimatableValue>(value: T): T {
   'worklet'
   return withSpring(value, {overshootClamping: true})
 }

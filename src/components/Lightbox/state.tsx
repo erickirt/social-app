@@ -9,7 +9,7 @@ import {nanoid} from 'nanoid/non-secure'
 
 import {useNonReactiveCallback} from '#/lib/hooks/useNonReactiveCallback'
 import {useHotkeysContext} from '#/lib/hotkeys'
-import {type ImageSource} from '#/view/com/lightbox/ImageViewing/@types'
+import {type ImageSource} from '#/components/Lightbox/types'
 
 export type Lightbox = {
   id: string

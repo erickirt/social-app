@@ -9,7 +9,6 @@ import {RemoveScrollBar} from 'react-remove-scroll-bar'
 
 import {saveImageToMediaLibrary} from '#/lib/media/manip'
 import {useA11y} from '#/state/a11y'
-import {useLightbox, useLightboxControls} from '#/state/lightbox'
 import {
   atoms as a,
   flatten,
@@ -19,6 +18,7 @@ import {
 } from '#/alf'
 import {Button} from '#/components/Button'
 import {Backdrop} from '#/components/Dialog'
+import {ArrowOutOfBox_Stroke2_Corner0_Rounded as ShareIcon} from '#/components/icons/ArrowOutOfBox'
 import {
   ChevronLeft_Stroke2_Corner0_Rounded as ChevronLeftIcon,
   ChevronRight_Stroke2_Corner0_Rounded as ChevronRightIcon,
@@ -26,11 +26,14 @@ import {
 import {DotGrid3x1_Stroke2_Corner0_Rounded as EllipsisIcon} from '#/components/icons/DotGrid'
 import {Download_Stroke2_Corner0_Rounded as DownloadIcon} from '#/components/icons/Download'
 import {TimesLarge_Stroke2_Corner0_Rounded as XIcon} from '#/components/icons/Times'
+import {CircleChromeButton} from '#/components/Lightbox/chrome/CircleChromeButton'
+import {PagerDots} from '#/components/Lightbox/chrome/PagerDots'
+import {useLightbox, useLightboxControls} from '#/components/Lightbox/state'
+import {type ImageSource} from '#/components/Lightbox/types'
 import {Loader} from '#/components/Loader'
 import * as Menu from '#/components/Menu'
 import * as Toast from '#/components/Toast'
 import {Text} from '#/components/Typography'
-import {type ImageSource} from './ImageViewing/@types'
 
 export function Lightbox() {
   const {activeLightbox} = useLightbox()
@@ -225,7 +228,13 @@ function LightboxGallery({
         )}
       </View>
       {img.alt ? (
-        <View style={[a.px_4xl, a.py_2xl, t.atoms.bg, delayedFadeInAnim]}>
+        <View
+          style={[
+            a.px_4xl,
+            a.py_2xl,
+            {backgroundColor: 'rgba(0, 0, 0, 0.45)'},
+            delayedFadeInAnim,
+          ]}>
           <Pressable
             accessibilityLabel={_(msg`Expand alt text`)}
             accessibilityHint={_(
@@ -235,7 +244,7 @@ function LightboxGallery({
               setAltExpanded(!isAltExpanded)
             }}>
             <Text
-              style={[a.text_md, a.leading_snug]}
+              style={[a.text_md, a.leading_snug, {color: '#fff'}]}
               numberOfLines={isAltExpanded ? 0 : 3}
               ellipsizeMode="tail">
               {img.alt}
@@ -251,29 +260,51 @@ function LightboxGallery({
       <Menu.Root>
         <Menu.Trigger label={_(msg`Image options`)}>
           {({props}) => (
-            <Button
+            <Pressable
               {...props}
-              style={[
-                a.absolute,
-                styles.menuBtn,
-                styles.blurredBackdrop,
-                a.transition_color,
-                delayedFadeInAnim,
-              ]}
-              hoverStyle={styles.blurredBackdropHover}
-              color="secondary"
-              label={_(msg`Image options`)}
-              shape="round"
-              size={gtPhone ? 'large' : 'small'}>
-              <EllipsisIcon
-                size={gtPhone ? 'md' : 'sm'}
-                style={{color: t.palette.white}}
+              accessible={false}
+              style={[a.absolute, styles.menuBtn, delayedFadeInAnim]}>
+              <CircleChromeButton
+                icon={EllipsisIcon}
+                iconStyle={{transform: [{rotate: '90deg'}]}}
+                label={_(msg`Image options`)}
               />
-            </Button>
+            </Pressable>
           )}
         </Menu.Trigger>
         <Menu.Outer>
           <Menu.Group>
+            <Menu.Item
+              label={_(msg`Share image`)}
+              onPress={async () => {
+                const url = img.uri
+                if (
+                  typeof navigator !== 'undefined' &&
+                  'share' in navigator &&
+                  navigator.share
+                ) {
+                  try {
+                    await navigator.share({url})
+                  } catch {
+                    // User cancelled or share failed; no-op
+                  }
+                } else if (
+                  typeof navigator !== 'undefined' &&
+                  navigator.clipboard
+                ) {
+                  try {
+                    await navigator.clipboard.writeText(url)
+                    Toast.show(_(msg`Link copied to clipboard`))
+                  } catch {
+                    Toast.show(_(msg`Failed to copy link`), {type: 'error'})
+                  }
+                }
+              }}>
+              <Menu.ItemText>
+                <Trans>Share image</Trans>
+              </Menu.ItemText>
+              <Menu.ItemIcon icon={ShareIcon} position="right" />
+            </Menu.Item>
             <Menu.Item
               label={_(msg`Download image`)}
               onPress={() => {
@@ -294,22 +325,20 @@ function LightboxGallery({
           </Menu.Group>
         </Menu.Outer>
       </Menu.Root>
-      <Button
-        onPress={onClose}
-        style={[
-          a.absolute,
-          styles.closeBtn,
-          styles.blurredBackdrop,
-          a.transition_color,
-          delayedFadeInAnim,
-        ]}
-        hoverStyle={styles.blurredBackdropHover}
-        color="secondary"
-        label={_(msg`Close image viewer`)}
-        shape="round"
-        size={gtPhone ? 'large' : 'small'}>
-        <XIcon size={gtPhone ? 'md' : 'sm'} style={{color: t.palette.white}} />
-      </Button>
+      <View style={[a.absolute, styles.closeBtn, delayedFadeInAnim]}>
+        <CircleChromeButton
+          icon={XIcon}
+          label={_(msg`Close image viewer`)}
+          onPress={onClose}
+        />
+      </View>
+      {imgs.length > 1 && (
+        <View
+          style={[a.absolute, styles.pagerDots, delayedFadeInAnim]}
+          pointerEvents="none">
+          <PagerDots count={imgs.length} activeIndex={index} />
+        </View>
+      )}
     </View>
   )
 }
@@ -428,6 +457,14 @@ const styles = StyleSheet.create({
   closeBtn: {
     top: 20,
     right: 20,
+  },
+  pagerDots: {
+    top: 20,
+    left: 0,
+    right: 0,
+    height: 44,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   leftBtn: {
     left: 20,
