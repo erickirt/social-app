@@ -1,10 +1,9 @@
 import {Platform} from 'react-native'
 import {getLocales} from 'expo-localization'
-import {keepPreviousData, useInfiniteQuery} from '@tanstack/react-query'
+import {useInfiniteQuery} from '@tanstack/react-query'
 
 import {GIF_KLIPY_FEATURED, GIF_KLIPY_SEARCH} from '#/lib/constants'
-import {logger} from '#/logger'
-import {type Gif} from '#/state/queries/tenor'
+import {type Gif} from '#/features/gifPicker/types'
 
 export const RQKEY_ROOT = 'klipy-gif-service'
 export const RQKEY_FEATURED = [RQKEY_ROOT, 'featured']
@@ -33,7 +32,6 @@ export function useGifSearchQuery(
     initialPageParam: undefined as string | undefined,
     getNextPageParam: lastPage => lastPage.next,
     enabled: !!query && options?.enabled !== false,
-    placeholderData: keepPreviousData,
   })
 }
 
@@ -87,22 +85,4 @@ function createKlipyApi<Input extends object>(
       results: body.results,
     }
   }
-}
-
-/**
- * Rewrites a KLIPY static CDN URL through the bsky proxy
- * (k.gifs.bsky.app). Mirrors `tenorUrlToBskyGifUrl`, but uses a
- * separate hostname from Tenor's t.gifs.bsky.app so the two
- * upstreams can be routed independently.
- */
-export function klipyUrlToBskyGifUrl(klipyUrl: string) {
-  let url
-  try {
-    url = new URL(klipyUrl)
-  } catch (e) {
-    logger.debug('invalid url passed to klipyUrlToBskyGifUrl()')
-    return ''
-  }
-  url.hostname = 'k.gifs.bsky.app'
-  return url.href
 }
