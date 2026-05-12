@@ -687,6 +687,10 @@ msgstr ""
 msgid "<0>Sign in</0><1> or </1><2>create an account</2><3> </3><4>to search for news, sports, politics, and everything else happening on Bluesky.</4>"
 msgstr ""
 
+#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:276
+msgid "<0>Tap here to confirm your location.</0>"
+msgstr "<0>Tap here to confirm your location.</0>"
+
 #. placeholder {0}: getName(items[1] /* [0] is self, skip it */)
 #: src/screens/StarterPack/Wizard/index.tsx:494
 msgid "<0>You</0> and<1> </1><2>{0} </2>are included in your starter pack"
@@ -1156,7 +1160,7 @@ msgid "Age assurance inquiry was submitted"
 msgstr ""
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:383
-#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:220
+#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:207
 msgid "Age assurance only takes a few minutes"
 msgstr ""
 
@@ -1734,6 +1738,14 @@ msgstr ""
 #: src/components/moderation/ReportDialog/utils/useReportOptions.ts:227
 msgid "Banned user returning"
 msgstr ""
+
+#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:259
+msgid "Based on your device's location, we think you're in <0>{region}</0>. This estimate may be inaccurate if you're using a VPN."
+msgstr "Based on your device's location, we think you're in <0>{region}</0>. This estimate may be inaccurate if you're using a VPN."
+
+#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:265
+msgid "Based on your network, we think you're in <0>{region}</0>. This estimate may be inaccurate if you're using a VPN."
+msgstr "Based on your network, we think you're in <0>{region}</0>. This estimate may be inaccurate if you're using a VPN."
 
 #: src/view/screens/Lists.tsx:35
 #: src/view/screens/ModerationModlists.tsx:35
@@ -2671,7 +2683,7 @@ msgid "Confirm"
 msgstr ""
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:397
-#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:116
+#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:278
 #: src/components/dialogs/DeviceLocationRequestDialog.tsx:41
 #: src/components/dialogs/DeviceLocationRequestDialog.tsx:106
 msgid "Confirm your location"
@@ -2698,12 +2710,12 @@ msgid "Connection issue"
 msgstr ""
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:334
-#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:159
+#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:146
 #: src/components/ageAssurance/AgeAssuranceAppealDialog.tsx:31
 msgid "Contact our moderation team"
 msgstr ""
 
-#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:100
+#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:127
 msgid "Contact our support team"
 msgstr ""
 
@@ -5591,7 +5603,7 @@ msgstr ""
 msgid "If none are selected, all languages will be shown in your feeds."
 msgstr ""
 
-#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:94
+#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:121
 msgid "If you are 18 years of age or older and want to try again, click the button below and use a different verification method if one is available in your region. If you have questions or concerns, <0>our support team can help.</0>"
 msgstr ""
 
@@ -5911,7 +5923,6 @@ msgid "Invites, but personal"
 msgstr ""
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:394
-#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:113
 msgid "Is your location not accurate? <0>Tap here to confirm your location.</0> "
 msgstr "Is your location not accurate? <0>Tap here to confirm your location.</0> "
 
@@ -6017,12 +6028,12 @@ msgid "Larger"
 msgstr ""
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:377
-#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:214
+#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:201
 msgid "Last initiated {timeAgo} ago"
 msgstr ""
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:375
-#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:212
+#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:199
 msgid "Last initiated just now"
 msgstr ""
 
@@ -7035,10 +7046,6 @@ msgstr ""
 #: src/view/screens/Lists.tsx:64
 #: src/view/screens/ModerationModlists.tsx:64
 msgid "New list"
-msgstr ""
-
-#: src/components/dms/NewMessagesPill.tsx:92
-msgid "New messages"
 msgstr ""
 
 #: src/screens/Login/SetNewPasswordForm.tsx:143
@@ -10745,7 +10752,7 @@ msgid "Thanks, you have successfully verified your email address. You can close 
 msgstr ""
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:423
-#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:142
+#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:247
 msgid "Thanks! You're all set."
 msgstr ""
 
@@ -12059,7 +12066,7 @@ msgid "Verify account"
 msgstr ""
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:360
-#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:197
+#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:184
 msgid "Verify again"
 msgstr ""
 
@@ -12087,8 +12094,8 @@ msgstr ""
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:348
 #: src/ageAssurance/components/NoAccessScreen.tsx:362
-#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:185
-#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:199
+#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:172
+#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:186
 msgid "Verify now"
 msgstr ""
 
@@ -12532,7 +12539,7 @@ msgid "We’re so excited to have you join us!"
 msgstr "We’re so excited to have you join us!"
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:416
-#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:135
+#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:241
 msgid "We're sorry, but based on your device's location, you are currently located in a region that requires age assurance."
 msgstr ""
 
@@ -12772,7 +12779,7 @@ msgid "You are currently blocked from using the Go Live feature. To appeal this 
 msgstr ""
 
 #: src/ageAssurance/components/NoAccessScreen.tsx:330
-#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:155
+#: src/components/ageAssurance/AgeAssuranceAccountCard.tsx:142
 msgid "You are currently unable to access Bluesky's Age Assurance flow. Please <0>contact our moderation team</0> if you believe this is an error."
 msgstr ""
 
