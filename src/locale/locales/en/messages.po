@@ -307,7 +307,7 @@ msgstr ""
 msgid "{count}+ requests"
 msgstr "{count}+ requests"
 
-#: src/components/dms/DateDivider.tsx:67
+#: src/components/dms/DateDivider.tsx:60
 msgid "{date} at {time}"
 msgstr "{date} at {time}"
 
@@ -1214,13 +1214,13 @@ msgstr ""
 msgid "Allow anyone to reply"
 msgstr ""
 
-#: src/screens/Messages/Settings.tsx:169
-#: src/screens/Messages/Settings.tsx:184
+#: src/screens/Messages/Settings.tsx:138
+#: src/screens/Messages/Settings.tsx:153
 msgid "Allow direct messages from"
 msgstr "Allow direct messages from"
 
-#: src/screens/Messages/Settings.tsx:215
-#: src/screens/Messages/Settings.tsx:230
+#: src/screens/Messages/Settings.tsx:184
+#: src/screens/Messages/Settings.tsx:199
 msgid "Allow group chat invites from"
 msgstr "Allow group chat invites from"
 
@@ -1795,7 +1795,7 @@ msgstr ""
 msgid "Beta Feature"
 msgstr ""
 
-#: src/components/dialogs/BirthDateSettings.tsx:159
+#: src/components/dialogs/BirthDateSettings.tsx:163
 msgid "Birthdate"
 msgstr ""
 
@@ -2299,11 +2299,11 @@ msgstr ""
 #: src/screens/Messages/ChatList.tsx:73
 #: src/screens/Messages/ChatList.tsx:77
 #: src/screens/Messages/ChatList.tsx:379
-#: src/screens/Messages/Settings.tsx:38
+#: src/screens/Messages/Settings.tsx:37
 msgid "Chat settings"
 msgstr ""
 
-#: src/screens/Messages/Settings.tsx:160
+#: src/screens/Messages/Settings.tsx:129
 msgid "Chat Settings"
 msgstr ""
 
@@ -3588,8 +3588,8 @@ msgstr ""
 #: src/components/contacts/components/InviteInfo.tsx:79
 #: src/components/contacts/screens/ViewMatches.tsx:395
 #: src/components/contacts/screens/ViewMatches.tsx:412
-#: src/components/dialogs/BirthDateSettings.tsx:189
-#: src/components/dialogs/BirthDateSettings.tsx:196
+#: src/components/dialogs/BirthDateSettings.tsx:193
+#: src/components/dialogs/BirthDateSettings.tsx:200
 #: src/components/dialogs/LanguageSelectDialog.tsx:327
 #: src/components/dialogs/ServerInput.tsx:237
 #: src/components/dialogs/ServerInput.tsx:239
@@ -3626,25 +3626,27 @@ msgstr ""
 msgid "Double tap to like"
 msgstr ""
 
-#: src/screens/Messages/Settings.tsx:296
-#: src/screens/Messages/Settings.tsx:301
-msgid "Download .jsonl file"
-msgstr "Download .jsonl file"
-
 #: src/screens/StarterPack/StarterPackLandingScreen.tsx:331
 msgid "Download Bluesky"
 msgstr ""
 
-#: src/screens/Settings/components/ExportCarDialog.tsx:115
-#: src/screens/Settings/components/ExportCarDialog.tsx:120
+#: src/screens/Settings/components/ExportCarDialog.tsx:118
 msgid "Download CAR file"
 msgstr ""
 
-#: src/screens/Messages/Settings.tsx:278
-#: src/screens/Settings/components/ExportCarDialog.tsx:136
-#: src/screens/Settings/components/ExportCarDialog.tsx:141
+#: src/screens/Settings/components/ExportCarDialog.tsx:123
+msgctxt "button"
+msgid "Download CAR file"
+msgstr "Download CAR file"
+
+#: src/screens/Settings/components/ExportCarDialog.tsx:149
 msgid "Download chat data"
 msgstr ""
+
+#: src/screens/Settings/components/ExportCarDialog.tsx:154
+msgctxt "button"
+msgid "Download chat data"
+msgstr "Download chat data"
 
 #: src/components/Lightbox/Lightbox.web.tsx:309
 #: src/components/Lightbox/Lightbox.web.tsx:321
@@ -4004,7 +4006,7 @@ msgstr ""
 msgid "Enter the username or email address you used when you created your account"
 msgstr ""
 
-#: src/components/dialogs/BirthDateSettings.tsx:160
+#: src/components/dialogs/BirthDateSettings.tsx:164
 msgid "Enter your birthdate"
 msgstr ""
 
@@ -4051,9 +4053,8 @@ msgstr ""
 msgid "Error message"
 msgstr ""
 
-#: src/screens/Messages/Settings.tsx:115
-#: src/screens/Settings/components/ExportCarDialog.tsx:49
-#: src/screens/Settings/components/ExportCarDialog.tsx:83
+#: src/screens/Settings/components/ExportCarDialog.tsx:47
+#: src/screens/Settings/components/ExportCarDialog.tsx:80
 msgid "Error occurred while saving file"
 msgstr ""
 
@@ -4078,12 +4079,12 @@ msgstr ""
 msgid "Everyone"
 msgstr ""
 
-#: src/screens/Messages/Settings.tsx:78
+#: src/screens/Messages/Settings.tsx:75
 msgctxt "allow group chat invites from"
 msgid "Everyone"
 msgstr "Everyone"
 
-#: src/screens/Messages/Settings.tsx:63
+#: src/screens/Messages/Settings.tsx:60
 msgctxt "allow messages from"
 msgid "Everyone"
 msgstr "Everyone"
@@ -4126,7 +4127,7 @@ msgstr ""
 msgid "Expands or collapses post text"
 msgstr ""
 
-#: src/lib/api/index.ts:440
+#: src/lib/api/index.ts:439
 msgid "Expected uri to resolve to a record"
 msgstr ""
 
@@ -4177,14 +4178,23 @@ msgstr ""
 msgid "Explore the app"
 msgstr ""
 
+#: src/screens/Messages/Settings.tsx:254
+#: src/screens/Messages/Settings.tsx:264
+msgid "Export chat data"
+msgstr "Export chat data"
+
+#: src/screens/Settings/components/ExportCarDialog.tsx:130
+msgid "Export my chat data"
+msgstr "Export my chat data"
+
 #: src/screens/Settings/AccountSettings.tsx:170
 #: src/screens/Settings/AccountSettings.tsx:174
 msgid "Export my data"
 msgstr ""
 
-#: src/screens/Settings/components/ExportCarDialog.tsx:99
-msgid "Export My Data"
-msgstr ""
+#: src/screens/Settings/components/ExportCarDialog.tsx:97
+msgid "Export my profile data"
+msgstr "Export my profile data"
 
 #: src/screens/Settings/ContentAndMediaSettings.tsx:86
 #: src/screens/Settings/ContentAndMediaSettings.tsx:89
@@ -4493,7 +4503,7 @@ msgstr ""
 msgid "Failed to update notification declaration"
 msgstr ""
 
-#: src/screens/Messages/Settings.tsx:123
+#: src/screens/Messages/Settings.tsx:92
 msgid "Failed to update settings"
 msgstr ""
 
@@ -4597,9 +4607,8 @@ msgstr ""
 msgid "Fetch update"
 msgstr ""
 
-#: src/screens/Messages/Settings.tsx:111
-#: src/screens/Settings/components/ExportCarDialog.tsx:45
-#: src/screens/Settings/components/ExportCarDialog.tsx:79
+#: src/screens/Settings/components/ExportCarDialog.tsx:43
+#: src/screens/Settings/components/ExportCarDialog.tsx:76
 msgid "File saved successfully!"
 msgstr ""
 
@@ -5493,7 +5502,7 @@ msgstr ""
 msgid "Hides the content"
 msgstr ""
 
-#: src/components/dialogs/BirthDateSettings.tsx:71
+#: src/components/dialogs/BirthDateSettings.tsx:76
 msgid "Hmm, it looks like you're signed in with an <0>App Password</0>. To set your birthdate, you'll need to sign in with your main account password, or ask whomever controls this account to do so."
 msgstr ""
 
@@ -6908,8 +6917,8 @@ msgstr ""
 msgid "Muting is private. Muted accounts can interact with you, but you will not see their posts or receive notifications from them."
 msgstr ""
 
-#: src/components/dialogs/BirthDateSettings.tsx:46
-#: src/components/dialogs/BirthDateSettings.tsx:50
+#: src/components/dialogs/BirthDateSettings.tsx:54
+#: src/components/dialogs/BirthDateSettings.tsx:58
 msgid "My birthdate"
 msgstr "My birthdate"
 
@@ -7215,12 +7224,12 @@ msgstr ""
 msgid "No notifications yet!"
 msgstr ""
 
-#: src/screens/Messages/Settings.tsx:89
+#: src/screens/Messages/Settings.tsx:86
 msgctxt "allow group chat invites from"
 msgid "No one"
 msgstr "No one"
 
-#: src/screens/Messages/Settings.tsx:71
+#: src/screens/Messages/Settings.tsx:68
 msgctxt "allow messages from"
 msgid "No one"
 msgstr ""
@@ -7395,8 +7404,8 @@ msgstr ""
 msgid "Notification settings"
 msgstr ""
 
-#: src/screens/Messages/Settings.tsx:262
-#: src/screens/Messages/Settings.tsx:268
+#: src/screens/Messages/Settings.tsx:231
+#: src/screens/Messages/Settings.tsx:244
 msgid "Notification sounds"
 msgstr ""
 
@@ -9268,7 +9277,7 @@ msgstr ""
 msgid "Sad GIFs"
 msgstr "Sad GIFs"
 
-#: src/components/dialogs/BirthDateSettings.tsx:196
+#: src/components/dialogs/BirthDateSettings.tsx:200
 #: src/components/dialogs/lists/CreateOrEditListDialog.tsx:309
 #: src/components/dialogs/lists/CreateOrEditListDialog.tsx:324
 #: src/components/dialogs/PostInteractionSettingsDialog.tsx:668
@@ -9291,7 +9300,7 @@ msgstr "Sad GIFs"
 msgid "Save"
 msgstr ""
 
-#: src/components/dialogs/BirthDateSettings.tsx:189
+#: src/components/dialogs/BirthDateSettings.tsx:193
 msgid "Save birthdate"
 msgstr ""
 
@@ -10721,7 +10730,7 @@ msgstr "Temporarily deactivate your account"
 msgid "Terms"
 msgstr ""
 
-#: src/components/dialogs/BirthDateSettings.tsx:177
+#: src/components/dialogs/BirthDateSettings.tsx:181
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:31
 #: src/components/PolicyUpdateOverlay/updates/202508/index.tsx:98
 #: src/Navigation.tsx:341
@@ -10797,7 +10806,7 @@ msgstr ""
 msgid "The author of this thread has hidden this reply."
 msgstr ""
 
-#: src/components/dialogs/BirthDateSettings.tsx:165
+#: src/components/dialogs/BirthDateSettings.tsx:169
 msgid "The birthdate you've entered means you are under 18 years old. Certain content and features may be unavailable to you."
 msgstr ""
 
@@ -10862,7 +10871,7 @@ msgstr ""
 msgid "The selected video is larger than 100 MB. Please try again with a smaller file."
 msgstr ""
 
-#: src/lib/hooks/useCleanError.ts:40
+#: src/lib/hooks/useCleanError.ts:41
 #: src/lib/strings/errors.ts:19
 msgid "The server appears to be experiencing issues. Please try again in a few moments."
 msgstr ""
@@ -10897,7 +10906,7 @@ msgstr ""
 msgid "Theme"
 msgstr ""
 
-#: src/components/dialogs/BirthDateSettings.tsx:101
+#: src/components/dialogs/BirthDateSettings.tsx:106
 msgid "There is a limit to how often you can change your birthdate. You may need to wait a day or two before updating it again."
 msgstr ""
 
@@ -11125,11 +11134,11 @@ msgstr ""
 msgid "This feature allows users to receive notifications for your new posts and replies. Who do you want to enable this for?"
 msgstr ""
 
-#: src/screens/Settings/components/ExportCarDialog.tsx:153
+#: src/screens/Settings/components/ExportCarDialog.tsx:166
 msgid "This feature is in beta. You can read more about repository exports in <0>this blogpost</0>."
 msgstr ""
 
-#: src/lib/hooks/useCleanError.ts:64
+#: src/lib/hooks/useCleanError.ts:61
 msgid "This feature is not available while using an app password. Please sign in with your main password."
 msgstr ""
 
@@ -11155,10 +11164,6 @@ msgstr ""
 msgid "This feed is no longer online. We are showing <0>Discover</0> instead."
 msgstr ""
 
-#: src/screens/Messages/Settings.tsx:287
-msgid "This file only includes chat messages that you have sent and does not include chat messages that you have received."
-msgstr "This file only includes chat messages that you have sent and does not include chat messages that you have received."
-
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:611
 msgid "This handle is reserved. Please try a different one."
 msgstr ""
@@ -11167,7 +11172,7 @@ msgstr ""
 msgid "This image could not be used. Try a different format like .jpg or .png."
 msgstr "This image could not be used. Try a different format like .jpg or .png."
 
-#: src/components/dialogs/BirthDateSettings.tsx:54
+#: src/components/dialogs/BirthDateSettings.tsx:62
 msgid "This information is private and not shared with other users."
 msgstr ""
 
@@ -11394,7 +11399,7 @@ msgstr "To log out, <0>click here</0>. Or if you’d prefer, you can <1>delete y
 msgid "To report a conversation, please report one of its messages via the conversation screen. This lets our moderators understand the context of your issue."
 msgstr ""
 
-#: src/components/dms/DateDivider.tsx:43
+#: src/components/dms/DateDivider.tsx:27
 msgid "Today"
 msgstr ""
 
@@ -11526,7 +11531,7 @@ msgstr ""
 msgid "Unable to access location. You'll need to visit your system settings to enable location services for Bluesky."
 msgstr ""
 
-#: src/lib/hooks/useCleanError.ts:27
+#: src/lib/hooks/useCleanError.ts:30
 #: src/lib/strings/errors.ts:12
 msgid "Unable to connect. Please check your internet connection and try again."
 msgstr ""
@@ -12023,12 +12028,12 @@ msgstr ""
 msgid "users following <0>@{0}</0>"
 msgstr ""
 
-#: src/screens/Messages/Settings.tsx:82
+#: src/screens/Messages/Settings.tsx:79
 msgctxt "allow group chat invites from"
 msgid "Users I follow"
 msgstr "Users I follow"
 
-#: src/screens/Messages/Settings.tsx:67
+#: src/screens/Messages/Settings.tsx:64
 msgctxt "allow messages from"
 msgid "Users I follow"
 msgstr "Users I follow"
@@ -12238,7 +12243,7 @@ msgstr "View {displayName}’s profile"
 msgid "View blocked user's profile"
 msgstr ""
 
-#: src/screens/Settings/components/ExportCarDialog.tsx:157
+#: src/screens/Settings/components/ExportCarDialog.tsx:170
 msgid "View blogpost for more details"
 msgstr ""
 
@@ -12473,7 +12478,7 @@ msgstr ""
 msgid "We were unable to load the age assurance configuration for your region, probably due to a network error. Some content and features may be unavailable temporarily. Please try again later."
 msgstr ""
 
-#: src/components/dialogs/BirthDateSettings.tsx:65
+#: src/components/dialogs/BirthDateSettings.tsx:41
 msgid "We were unable to load your birthdate preferences. Please try again."
 msgstr ""
 
@@ -12758,7 +12763,7 @@ msgstr ""
 msgid "Yes, reactivate my account"
 msgstr ""
 
-#: src/components/dms/DateDivider.tsx:45
+#: src/components/dms/DateDivider.tsx:29
 msgid "Yesterday"
 msgstr ""
 
@@ -12833,7 +12838,7 @@ msgstr ""
 msgid "You can also discover new Custom Feeds to follow."
 msgstr ""
 
-#: src/screens/Settings/components/ExportCarDialog.tsx:126
+#: src/screens/Settings/components/ExportCarDialog.tsx:139
 msgid "You can also download your chat data as a \"JSONL\" file. This file only includes chat messages that you have sent and does not include chat messages that you have received."
 msgstr ""
 
@@ -12845,8 +12850,8 @@ msgstr ""
 msgid "You can choose whether chat notifications have sound in the chat settings within the app"
 msgstr ""
 
-#: src/screens/Messages/Settings.tsx:178
-#: src/screens/Messages/Settings.tsx:224
+#: src/screens/Messages/Settings.tsx:147
+#: src/screens/Messages/Settings.tsx:193
 msgid "You can continue ongoing conversations regardless of which setting you choose."
 msgstr ""
 
@@ -12890,7 +12895,7 @@ msgstr ""
 msgid "You can update this later from your settings."
 msgstr ""
 
-#: src/lib/hooks/useCleanError.ts:55
+#: src/lib/hooks/useCleanError.ts:54
 #: src/lib/strings/errors.ts:28
 msgid "You cannot update your birthdate while using an app password. Please sign in with your main password to update your birthdate."
 msgstr ""
@@ -13056,7 +13061,7 @@ msgstr ""
 msgid "You may only add up to 3 feeds"
 msgstr ""
 
-#: src/components/dialogs/BirthDateSettings.tsx:173
+#: src/components/dialogs/BirthDateSettings.tsx:177
 msgid "You must be at least 13 years old to use Bluesky. Read our <0>Terms of Service</0> for more information."
 msgstr ""
 
@@ -13095,8 +13100,8 @@ msgstr ""
 msgid "You reacted {0} to {target}"
 msgstr "You reacted {0} to {target}"
 
-#: src/components/dialogs/BirthDateSettings.tsx:87
-#: src/components/dialogs/BirthDateSettings.tsx:97
+#: src/components/dialogs/BirthDateSettings.tsx:92
+#: src/components/dialogs/BirthDateSettings.tsx:102
 msgid "You recently changed your birthdate"
 msgstr ""
 
@@ -13199,7 +13204,7 @@ msgstr ""
 msgid "You've reached the maximum number of drafts"
 msgstr ""
 
-#: src/lib/hooks/useCleanError.ts:73
+#: src/lib/hooks/useCleanError.ts:68
 msgid "You've reached the maximum number of requests allowed. Please try again later."
 msgstr ""
 
@@ -13235,7 +13240,7 @@ msgstr ""
 msgid "Your account is not yet old enough to upload videos. Please try again later."
 msgstr ""
 
-#: src/screens/Settings/components/ExportCarDialog.tsx:104
+#: src/screens/Settings/components/ExportCarDialog.tsx:107
 msgid "Your account repository, containing all public data records, can be downloaded as a \"CAR\" file. This file does not include media embeds, such as images, or your private data, which must be fetched separately."
 msgstr ""
 
