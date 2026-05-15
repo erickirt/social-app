@@ -32,7 +32,7 @@ export function Member({
 }: {
   convo: ConvoWithDetails
   profile: GroupConvoMember
-  status: 'owner' | 'standard' | 'invited'
+  status: 'owner' | 'standard'
   isOwner: boolean
 }) {
   const t = useTheme()
