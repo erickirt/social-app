@@ -51,16 +51,19 @@ import {Text} from '#/components/Typography'
 import {useAnalytics} from '#/analytics'
 import {IS_NATIVE} from '#/env'
 import type * as bsky from '#/types/bsky'
+import {useIsWithinSplitView} from './splitView/context'
 
 export const ChatListItemPortal = createPortalGroup()
 
 export function ChatListItem({
   convo: convoView,
   showMenu = true,
+  selected = false,
   children,
 }: {
   convo: ChatBskyConvoDefs.ConvoView
   showMenu?: boolean
+  selected?: boolean
   children?: React.ReactNode
 }) {
   const {currentAccount} = useSession()
@@ -78,7 +81,8 @@ export function ChatListItem({
         <DirectChatItem
           convo={convo}
           moderationOpts={moderationOpts}
-          showMenu={showMenu}>
+          showMenu={showMenu}
+          selected={selected}>
           {children}
         </DirectChatItem>
       )
@@ -88,7 +92,8 @@ export function ChatListItem({
         <GroupChatItem
           convo={convo}
           moderationOpts={moderationOpts}
-          showMenu={showMenu}>
+          showMenu={showMenu}
+          selected={selected}>
           {children}
         </GroupChatItem>
       )
@@ -103,15 +108,18 @@ function DirectChatItem({
   convo,
   moderationOpts,
   showMenu,
+  selected,
   children,
 }: {
   convo: Extract<ConvoWithDetails, {kind: 'direct'}>
   moderationOpts: ModerationOpts
   showMenu?: boolean
+  selected?: boolean
   children?: React.ReactNode
 }) {
   const {t: l} = useLingui()
   const profile = useProfileShadow(convo.primaryMember)
+  const {isWithinSplitView} = useIsWithinSplitView()
 
   const moderation = useMemo(
     () => moderateProfile(profile, moderationOpts),
@@ -129,7 +137,7 @@ function DirectChatItem({
       avatar={
         <PreviewableUserAvatar
           profile={profile}
-          size={52}
+          size={isWithinSplitView ? 48 : 52}
           moderation={moderation.ui('avatar')}
         />
       }
@@ -145,15 +153,18 @@ function DirectChatItem({
           : l`This conversation is with a deleted or a deactivated account. Press for options`
       }
       showMenu={showMenu}
+      selected={selected}
       isDeletedAccount={isDeletedAccount}
       isBlockedAccount={moderation.blocked}
       showProfileBadges
       postAlerts={
-        <PostAlerts
-          modui={moderation.ui('contentList')}
-          size="lg"
-          style={[a.pt_xs]}
-        />
+        isWithinSplitView ? null : (
+          <PostAlerts
+            modui={moderation.ui('contentList')}
+            size="sm"
+            style={[a.pb_2xs, a.max_w_full, a.overflow_hidden]}
+          />
+        )
       }>
       {children}
     </BaseChatItem>
@@ -164,15 +175,18 @@ function GroupChatItem({
   convo,
   moderationOpts,
   showMenu,
+  selected,
   children,
 }: {
   convo: Extract<ConvoWithDetails, {kind: 'group'}>
   moderationOpts: ModerationOpts
   showMenu?: boolean
+  selected?: boolean
   children?: React.ReactNode
 }) {
   const {t: l} = useLingui()
   const groupOwner = useMaybeProfileShadow(convo.primaryMember)
+  const {isWithinSplitView} = useIsWithinSplitView()
 
   const moderation = useMemo(
     () =>
@@ -185,7 +199,12 @@ function GroupChatItem({
   return (
     <BaseChatItem
       convo={convo}
-      avatar={<AvatarBubbles profiles={convo.members} size={52} />}
+      avatar={
+        <AvatarBubbles
+          profiles={convo.members}
+          size={isWithinSplitView ? 48 : 52}
+        />
+      }
       title={chatName}
       accessibilityHint={l`Go to the group chat named "${chatName}"`}
       primaryProfile={groupOwner}
@@ -193,6 +212,7 @@ function GroupChatItem({
       isBlockedAccount={false}
       isDeletedAccount={false}
       showProfileBadges={false}
+      selected={selected}
       showMenu={showMenu}>
       {children}
     </BaseChatItem>
@@ -210,6 +230,7 @@ function BaseChatItem({
   primaryProfile,
   primaryProfileModeration,
   showMenu,
+  selected,
   showProfileBadges,
   postAlerts,
   children,
@@ -224,6 +245,7 @@ function BaseChatItem({
   primaryProfile?: Shadow<bsky.profile.AnyProfileView>
   primaryProfileModeration?: ModerationDecision
   showMenu?: boolean
+  selected?: boolean
   showProfileBadges: boolean
   postAlerts?: React.ReactNode
   children?: React.ReactNode
@@ -236,6 +258,7 @@ function BaseChatItem({
   const leaveConvoControl = useDialogControl()
   const {mutate: markAsRead} = useMarkAsReadMutation()
   const {gtMobile} = useBreakpoints()
+  const {isWithinSplitView} = useIsWithinSplitView()
 
   const playHaptic = useHaptics()
   const queryClient = useQueryClient()
@@ -407,6 +430,8 @@ function BaseChatItem({
         leftFirst: deleteAction,
       }
 
+  const avatarSize = isWithinSplitView ? 48 : 52
+
   return (
     <ChatListItemPortal.Provider>
       <GestureActionView actions={actions}>
@@ -416,7 +441,7 @@ function BaseChatItem({
           // @ts-expect-error web only
           onFocus={onFocus}
           onBlur={onMouseLeave}
-          style={[a.relative, t.atoms.bg]}>
+          style={[a.relative, t.atoms.bg, isWithinSplitView && a.mx_sm]}>
           <View
             style={[
               a.z_10,
@@ -457,13 +482,15 @@ function BaseChatItem({
                   a.px_lg,
                   a.py_md,
                   a.gap_md,
+                  isWithinSplitView && a.rounded_sm,
                   (hovered || pressed || focused) && t.atoms.bg_contrast_25,
+                  selected && t.atoms.bg_contrast_50,
                 ]}>
                 {/* Avatar goes here */}
-                <View style={{width: 52, height: 52}} />
+                <View style={{width: avatarSize, height: avatarSize}} />
 
                 <View
-                  style={[a.flex_1, a.justify_center, web({paddingRight: 45})]}>
+                  style={[a.flex_1, a.justify_center, web({paddingRight: 40})]}>
                   <View style={[a.w_full, a.flex_row, a.align_end, a.pb_2xs]}>
                     <View style={[a.flex_shrink]}>
                       <Text
@@ -483,7 +510,7 @@ function BaseChatItem({
                     {showProfileBadges && primaryProfile && (
                       <ProfileBadges
                         profile={primaryProfile}
-                        size="md"
+                        size="sm"
                         style={[a.pl_xs, a.self_center]}
                       />
                     )}
@@ -526,14 +553,13 @@ function BaseChatItem({
                   {subtitle && (
                     <Text
                       numberOfLines={1}
-                      style={[
-                        a.text_sm,
-                        t.atoms.text_contrast_medium,
-                        a.pb_xs,
-                      ]}>
+                      style={[a.text_sm, t.atoms.text_contrast_medium, a.pb_xs]}
+                      emoji>
                       {subtitle}
                     </Text>
                   )}
+
+                  {postAlerts}
 
                   <View style={[a.flex_row, a.align_center]}>
                     {LastMessageIcon && (
@@ -556,8 +582,6 @@ function BaseChatItem({
                       {lastMessage}
                     </Text>
                   </View>
-
-                  {postAlerts}
 
                   {children}
                 </View>
