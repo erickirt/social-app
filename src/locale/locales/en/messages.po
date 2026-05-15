@@ -1075,11 +1075,11 @@ msgid "Add your birthdate"
 msgstr ""
 
 #. placeholder {0}: createSanitizedDisplayName( profile.kind.addedBy, true, moderateProfile(profile.kind.addedBy, moderationOpts).ui('displayName'), )
-#: src/screens/Messages/ConversationSettings/Member.tsx:98
+#: src/screens/Messages/ConversationSettings/Member.tsx:99
 msgid "Added by {0}"
 msgstr "Added by {0}"
 
-#: src/screens/Messages/ConversationSettings/Member.tsx:103
+#: src/screens/Messages/ConversationSettings/Member.tsx:104
 msgid "Added by invite link"
 msgstr "Added by invite link"
 
@@ -1105,7 +1105,7 @@ msgstr ""
 msgid "Additional details (limit 300 characters)"
 msgstr ""
 
-#: src/screens/Messages/ConversationSettings/Member.tsx:83
+#: src/screens/Messages/ConversationSettings/Member.tsx:84
 #: src/screens/Messages/ConversationSettings/MemberMenu.tsx:152
 msgid "Admin"
 msgstr "Admin"
@@ -2381,7 +2381,7 @@ msgstr ""
 msgid "Choose this color as your avatar"
 msgstr ""
 
-#: src/screens/Messages/components/InviteLinkDialog.tsx:207
+#: src/screens/Messages/components/InviteLinkDialog.tsx:210
 msgid "Choose who can join this group chat and how."
 msgstr "Choose who can join this group chat and how."
 
@@ -2531,8 +2531,8 @@ msgstr ""
 #: src/features/gifPicker/components/GifPickerErrorBoundary.tsx:45
 #: src/features/liveNow/components/EditLiveDialog.tsx:217
 #: src/features/liveNow/components/EditLiveDialog.tsx:223
-#: src/screens/Messages/components/InviteLinkDialog.tsx:418
-#: src/screens/Messages/components/InviteLinkDialog.tsx:423
+#: src/screens/Messages/components/InviteLinkDialog.tsx:425
+#: src/screens/Messages/components/InviteLinkDialog.tsx:430
 #: src/screens/Settings/components/ChangePasswordDialog.tsx:288
 #: src/screens/Settings/components/ChangePasswordDialog.tsx:293
 #: src/view/com/feeds/MissingFeed.tsx:211
@@ -2834,7 +2834,7 @@ msgstr ""
 msgid "Conversation"
 msgstr ""
 
-#: src/screens/Messages/components/ChatListItem.tsx:280
+#: src/screens/Messages/components/ChatListItem.tsx:287
 msgid "Conversation deleted"
 msgstr ""
 
@@ -3154,7 +3154,7 @@ msgstr ""
 #. placeholder {0}: i18n.date(appPassword.createdAt, { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', })
 #. placeholder {0}: i18n.date(createdAt, { dateStyle: 'long', timeStyle: 'short', })
 #. placeholder {0}: i18n.date(createdAt, { month: 'long', day: 'numeric', year: 'numeric', })
-#: src/screens/Messages/components/InviteLinkDialog.tsx:304
+#: src/screens/Messages/components/InviteLinkDialog.tsx:311
 #: src/screens/Messages/ConversationSettings/index.tsx:454
 #: src/screens/Settings/AppPasswords.tsx:174
 msgid "Created {0}"
@@ -3340,8 +3340,8 @@ msgid "Deleted"
 msgstr ""
 
 #: src/components/dms/MessagesListHeader.tsx:105
-#: src/screens/Messages/components/ChatListItem.tsx:122
-#: src/screens/Messages/ConversationSettings/Member.tsx:76
+#: src/screens/Messages/components/ChatListItem.tsx:123
+#: src/screens/Messages/ConversationSettings/Member.tsx:77
 msgid "Deleted Account"
 msgstr ""
 
@@ -3408,8 +3408,8 @@ msgstr ""
 msgid "Dim"
 msgstr ""
 
-#: src/screens/Messages/components/InviteLinkDialog.tsx:336
-#: src/screens/Messages/components/InviteLinkDialog.tsx:344
+#: src/screens/Messages/components/InviteLinkDialog.tsx:343
+#: src/screens/Messages/components/InviteLinkDialog.tsx:351
 msgid "Disable"
 msgstr "Disable"
 
@@ -3757,7 +3757,7 @@ msgstr ""
 msgid "Edit interests"
 msgstr ""
 
-#: src/screens/Messages/components/InviteLinkDialog.tsx:318
+#: src/screens/Messages/components/InviteLinkDialog.tsx:325
 msgid "Edit link settings"
 msgstr "Edit link settings"
 
@@ -4733,7 +4733,7 @@ msgstr "Focus the search field"
 #: src/components/ProfileCard.tsx:546
 #: src/components/ProfileHoverCard/index.web.tsx:495
 #: src/components/ProfileHoverCard/index.web.tsx:506
-#: src/screens/Messages/ConversationSettings/Member.tsx:146
+#: src/screens/Messages/ConversationSettings/Member.tsx:147
 #: src/screens/PostThread/components/ThreadItemAnchorFollowButton.tsx:157
 #: src/screens/Profile/Header/ProfileHeaderStandard.tsx:402
 #: src/screens/VideoFeed/index.tsx:866
@@ -4748,7 +4748,7 @@ msgstr ""
 msgid "Follow {0}"
 msgstr ""
 
-#: src/screens/Messages/ConversationSettings/Member.tsx:143
+#: src/screens/Messages/ConversationSettings/Member.tsx:144
 msgid "Follow {displayName}"
 msgstr "Follow {displayName}"
 
@@ -4868,7 +4868,7 @@ msgstr ""
 msgid "Following {0}"
 msgstr ""
 
-#: src/screens/Messages/ConversationSettings/Member.tsx:53
+#: src/screens/Messages/ConversationSettings/Member.tsx:54
 msgid "Following {displayName}"
 msgstr "Following {displayName}"
 
@@ -4972,17 +4972,17 @@ msgstr ""
 msgid "Generate a starter pack"
 msgstr ""
 
-#: src/screens/Messages/components/InviteLinkDialog.tsx:202
-#: src/screens/Messages/components/InviteLinkDialog.tsx:237
-#: src/screens/Messages/components/InviteLinkDialog.tsx:260
+#: src/screens/Messages/components/InviteLinkDialog.tsx:205
+#: src/screens/Messages/components/InviteLinkDialog.tsx:243
+#: src/screens/Messages/components/InviteLinkDialog.tsx:267
 msgid "Generate invite link"
 msgstr "Generate invite link"
 
-#: src/screens/Messages/components/InviteLinkDialog.tsx:391
+#: src/screens/Messages/components/InviteLinkDialog.tsx:398
 msgid "Generate new invite link"
 msgstr "Generate new invite link"
 
-#: src/screens/Messages/components/InviteLinkDialog.tsx:396
+#: src/screens/Messages/components/InviteLinkDialog.tsx:403
 msgid "Generate new link"
 msgstr "Generate new link"
 
@@ -5171,7 +5171,7 @@ msgid "Go to account settings"
 msgstr ""
 
 #. placeholder {0}: profile.handle
-#: src/screens/Messages/components/ChatListItem.tsx:143
+#: src/screens/Messages/components/ChatListItem.tsx:144
 msgid "Go to conversation with {0}"
 msgstr ""
 
@@ -5190,7 +5190,7 @@ msgstr ""
 msgid "Go to profile"
 msgstr ""
 
-#: src/screens/Messages/components/ChatListItem.tsx:189
+#: src/screens/Messages/components/ChatListItem.tsx:190
 msgid "Go to the group chat named \"{chatName}\""
 msgstr "Go to the group chat named \"{chatName}\""
 
@@ -5222,7 +5222,7 @@ msgstr ""
 msgid "Grooming or predatory behavior"
 msgstr ""
 
-#: src/screens/Messages/components/InviteLinkDialog.tsx:450
+#: src/screens/Messages/components/InviteLinkDialog.tsx:457
 msgid "Group chat invite link dialog"
 msgstr "Group chat invite link dialog"
 
@@ -5890,9 +5890,9 @@ msgid "Invite friends <0/>"
 msgstr ""
 
 #: src/screens/Messages/components/InviteLinkDialog.tsx:166
-#: src/screens/Messages/components/InviteLinkDialog.tsx:282
-#: src/screens/Messages/components/InviteLinkDialog.tsx:288
-#: src/screens/Messages/components/InviteLinkDialog.tsx:408
+#: src/screens/Messages/components/InviteLinkDialog.tsx:289
+#: src/screens/Messages/components/InviteLinkDialog.tsx:295
+#: src/screens/Messages/components/InviteLinkDialog.tsx:415
 #: src/screens/Messages/components/MessagesListInfoPanel.tsx:137
 #: src/screens/Messages/ConversationSettings/index.tsx:501
 msgid "Invite link"
@@ -5903,7 +5903,7 @@ msgid "Invite link created"
 msgstr "Invite link created"
 
 #: src/components/dms/getSystemMessageInfo.ts:120
-#: src/screens/Messages/components/InviteLinkDialog.tsx:282
+#: src/screens/Messages/components/InviteLinkDialog.tsx:289
 msgid "Invite link disabled"
 msgstr "Invite link disabled"
 
@@ -6638,7 +6638,7 @@ msgstr ""
 msgid "Message {displayName}"
 msgstr "Message {displayName}"
 
-#: src/screens/Messages/components/ChatListItem.tsx:281
+#: src/screens/Messages/components/ChatListItem.tsx:288
 msgid "Message deleted"
 msgstr ""
 
@@ -7208,7 +7208,7 @@ msgstr ""
 msgid "No media yet"
 msgstr ""
 
-#: src/screens/Messages/components/ChatListItem.tsx:269
+#: src/screens/Messages/components/ChatListItem.tsx:274
 msgid "No messages yet"
 msgstr ""
 
@@ -7565,8 +7565,8 @@ msgstr ""
 msgid "Open chat member options for {displayName}"
 msgstr "Open chat member options for {displayName}"
 
-#: src/screens/Messages/components/ChatListItem.tsx:429
-#: src/screens/Messages/components/ChatListItem.tsx:433
+#: src/screens/Messages/components/ChatListItem.tsx:438
+#: src/screens/Messages/components/ChatListItem.tsx:442
 msgid "Open conversation options"
 msgstr ""
 
@@ -8301,8 +8301,8 @@ msgstr ""
 msgid "Post language selection"
 msgstr ""
 
-#: src/screens/Messages/components/InviteLinkDialog.tsx:349
-#: src/screens/Messages/components/InviteLinkDialog.tsx:361
+#: src/screens/Messages/components/InviteLinkDialog.tsx:356
+#: src/screens/Messages/components/InviteLinkDialog.tsx:368
 msgid "Post link"
 msgstr "Post link"
 
@@ -8570,11 +8570,11 @@ msgstr ""
 msgid "Re-attach quote"
 msgstr ""
 
-#: src/screens/Messages/components/InviteLinkDialog.tsx:378
+#: src/screens/Messages/components/InviteLinkDialog.tsx:385
 msgid "Re-enable invite link"
 msgstr "Re-enable invite link"
 
-#: src/screens/Messages/components/InviteLinkDialog.tsx:386
+#: src/screens/Messages/components/InviteLinkDialog.tsx:393
 msgid "Re-enable link"
 msgstr "Re-enable link"
 
@@ -9913,8 +9913,8 @@ msgstr ""
 
 #: src/components/StarterPack/QrCodeDialog.tsx:195
 #: src/screens/Hashtag.tsx:130
-#: src/screens/Messages/components/InviteLinkDialog.tsx:365
 #: src/screens/Messages/components/InviteLinkDialog.tsx:372
+#: src/screens/Messages/components/InviteLinkDialog.tsx:379
 #: src/screens/StarterPack/StarterPackScreen.tsx:447
 #: src/screens/Topic.tsx:90
 msgid "Share"
@@ -10910,7 +10910,7 @@ msgstr ""
 msgid "There is a limit to how often you can change your birthdate. You may need to wait a day or two before updating it again."
 msgstr ""
 
-#: src/screens/Messages/components/InviteLinkDialog.tsx:413
+#: src/screens/Messages/components/InviteLinkDialog.tsx:420
 msgid "There is no invite link for this group chat."
 msgstr "There is no invite link for this group chat."
 
@@ -10980,7 +10980,7 @@ msgstr ""
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:431
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:454
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:474
-#: src/screens/Messages/ConversationSettings/Member.tsx:60
+#: src/screens/Messages/ConversationSettings/Member.tsx:61
 #: src/screens/Messages/ConversationSettings/MemberMenu.tsx:109
 #: src/screens/Messages/ConversationSettings/MemberMenu.tsx:122
 #: src/screens/PostThread/components/ThreadItemAnchorFollowButton.tsx:117
@@ -11118,7 +11118,7 @@ msgstr ""
 msgid "This content is not viewable without a Bluesky account."
 msgstr ""
 
-#: src/screens/Messages/components/ChatListItem.tsx:144
+#: src/screens/Messages/components/ChatListItem.tsx:145
 msgid "This conversation is with a deleted or a deactivated account. Press for options"
 msgstr ""
 
@@ -11837,7 +11837,9 @@ msgstr ""
 msgid "Update email"
 msgstr ""
 
-#: src/screens/Messages/components/InviteLinkDialog.tsx:259
+#: src/screens/Messages/components/InviteLinkDialog.tsx:204
+#: src/screens/Messages/components/InviteLinkDialog.tsx:242
+#: src/screens/Messages/components/InviteLinkDialog.tsx:266
 msgid "Update invite link"
 msgstr "Update invite link"
 
@@ -12629,7 +12631,7 @@ msgstr ""
 msgid "Who can interact with this post?"
 msgstr ""
 
-#: src/screens/Messages/components/InviteLinkDialog.tsx:212
+#: src/screens/Messages/components/InviteLinkDialog.tsx:215
 msgid "Who can join this group chat and how"
 msgstr "Who can join this group chat and how"
 
